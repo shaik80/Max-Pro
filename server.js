@@ -1,4 +1,4 @@
-require('./config/db');
+// require('./config/db');
 const express = require('express');
 const app = express();
 const port = process.env.port || 3000;
@@ -9,6 +9,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const bodyparser = require('body-parser');
 const passport = require('passport');
+const introductioncontrollers = require('./controllers/introductioncontrollers')
 
 app.use(express.static('public'));
 
@@ -46,3 +47,5 @@ app.use((req,res,next)=>{
 
 app.set('view engine','hbs')
 app.listen(port,() => console.log('server started on port 3000.....'))
+
+app.use('/',introductioncontrollers)
