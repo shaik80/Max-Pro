@@ -1,0 +1,34 @@
+{
+  "name": "Max-Pro",
+  "version": "1.0.0",
+  "description": "Jashwanthi",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaik80/Max-Pro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaik80/Max-Pro/issues"
+  },
+  "homepage": "https://github.com/shaik80/Max-Pro#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.7.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
