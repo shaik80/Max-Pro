@@ -10,10 +10,13 @@ const db=require('./config/keys').MongoURI;
 //connect to mongo
 mongoose.connect(db,{useNewUrlParser:true})
 .then(()=>console.log('mongoDB connected..'))
+.catch(err=>console.log(err));
 
 //EJS
 app.use(expressLayouts);
 app.set('view engine','ejs');
+
+
 
 //routes
 app.use('/',require('./routes/index'));
