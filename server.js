@@ -25,7 +25,7 @@ app.engine('hbs',exphbs({
     extname:'hbs',
     defaultLayout:'mainlayouts',
     layoutsDir:__dirname+'/views/layouts/defaultlayouts',
-    partialsDir: __dirname+'/views/partiallayouts'
+    partialsDir: __dirname+'/views/layouts/partiallayouts'
 }));
 
 app.use(session({
