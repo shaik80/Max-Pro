@@ -91,4 +91,10 @@ passport.authenticate('local',{
     failureFlash:true
 })(req,res,next);
 });
+
+//logout handle
+router.get('/logout',(req,res)=>{
+    req.logout();
+    res.redirect('/users/login');
+})
 module.exports=router;
