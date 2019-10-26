@@ -20,7 +20,7 @@ router.post('/register',(req,res)=>{
 
     //check required fields
     if(!name || !email || !password || !password2){
-        errors.push({msg:'Passwords do not match'});
+        errors.push({msg:'Please fill in all fields'});
     }
 
     //check password length
@@ -35,7 +35,7 @@ router.post('/register',(req,res)=>{
         res.render('register',{
             errors,
             name,
-            email,
+            email, 
             password,
             password2
         });
