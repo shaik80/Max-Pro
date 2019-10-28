@@ -6,7 +6,7 @@ const passport =require('passport');
 const User =require('../models/User');
 
 
-
+const Profit =require('../models/Profit');
 
 
 //Login page
@@ -15,7 +15,7 @@ router.get('/login',(req,res)=>res.render('login'));
 //Register page
 router.get('/register',(req,res)=>res.render('register'));
 
-
+router.get('/dashboard',(req,res)=>res.render('dashboard'));
 
 
 
@@ -106,5 +106,4 @@ router.get('/logout',(req,res)=>{
     
 })
 
-module.exports=router;
 
