@@ -21,3 +21,4 @@ const ProfitSchema=new mongoose.Schema({
     }
 });
 const Profit=mongoose.model('Profit',ProfitSchema);
+module.exports=Profit;
