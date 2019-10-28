@@ -113,6 +113,11 @@ router.post('/dashboard',(req,res)=>{
     budget,
     demand
 });
-
+newProfit.save()
+.then(profit=>{
+    req.flash('success_msg','You are now registered and can log in')
+    res.redirect('/users/login');
+})
+});
 module.exports=router;
 
