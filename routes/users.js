@@ -6,11 +6,18 @@ const passport =require('passport');
 const User =require('../models/User');
 
 
+
+
+
 //Login page
 router.get('/login',(req,res)=>res.render('login'));
 
 //Register page
 router.get('/register',(req,res)=>res.render('register'));
+
+
+
+
 
 
 //Register Handle
@@ -96,5 +103,8 @@ passport.authenticate('local',{
 router.get('/logout',(req,res)=>{
     req.logout();
     res.redirect('/users/login');
+    
 })
+
 module.exports=router;
+

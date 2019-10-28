@@ -1,3 +1,48 @@
 <h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">welcome User%></p>
+<form action="/users/dashboard" method="POST">
+<div class="form-group">
+    <label for="itemname">Items</label>
+    <input
+      type="itemname"
+      id="itemname"
+      name="itemname"
+      class="form-control"
+      placeholder="Enter Item name"
+      value="<%= typeof itemname != 'undefined' ? itemname : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="profit">Profit</label>
+    <input
+      type="profit"
+      id="profit"
+      name="profit"
+      class="form-control"
+      placeholder="Enter Profit"
+      value="<%= typeof profit != 'undefined' ? profit : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="budget">Budget</label>
+    <input
+      type="budget"
+      id="budget"
+      name="budget"
+      class="form-control"
+      placeholder="Enter Budget"
+      value="<%= typeof budget != 'undefined' ? budget : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="demand">Demand</label>
+    <input
+      type="demand"
+      id="demand"
+      name="demand"
+      class="form-control"
+      placeholder="Enter number of items"
+      value="<%= typeof demand != 'undefined' ? demand : '' %>"
+    />
+  </div>
+  <button type="submit" class="btn btn-secondary">Submit</button>
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
