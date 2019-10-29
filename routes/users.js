@@ -5,9 +5,8 @@ const passport =require('passport');
 //User model
 const User =require('../models/User');
 
-
+//profit model
 const Profit =require('../models/Profit');
-
 
 //Login page
 router.get('/login',(req,res)=>res.render('login'));
@@ -15,6 +14,7 @@ router.get('/login',(req,res)=>res.render('login'));
 //Register page
 router.get('/register',(req,res)=>res.render('register'));
 
+//dashboard page
 router.get('/dashboard',(req,res)=>res.render('dashboard'));
 
 
@@ -93,7 +93,7 @@ router.post('/register',(req,res)=>{
 // login handle
 router.post('/login',(req,res,next)=>{
 passport.authenticate('local',{
-    successRedirect:'/dashboard',
+    successRedirect:'/users/dashboard',
     failureRedirect:'/users/login',
     failureFlash:true
 })(req,res,next);
@@ -106,18 +106,18 @@ router.get('/logout',(req,res)=>{
     
 })
 router.post('/dashboard',(req,res)=>{
-   const{itemname,profit,budget,demand}=req.body;
-   const newProfit= new Profit({
-    itemname,
-    profit,
-    budget,
-    demand
-});
-newProfit.save()
-.then(profit=>{
-    req.flash('success_msg','You are now registered and can log in')
-    res.redirect('/users/login');
-})
-});
+    const{itemname,profit,budget,demand}=req.body;
+    const newProfit= new Profit({
+     itemname,
+     profit,
+     budget,
+     demand
+ });
+ newProfit.save()
+ .then(profit=>{
+     req.flash('success_msg','You are now registered and can log in')
+     res.redirect('/users/login');
+ })
+ });
 module.exports=router;
 

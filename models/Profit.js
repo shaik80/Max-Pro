@@ -4,19 +4,19 @@ const mongoose =require('mongoose');
 const ProfitSchema=new mongoose.Schema({
 
     itemname:{
-        type:[],
+        type:String,
         required:true
     },
     profit:{
-        type:[],
+        type:String,
         required:true
     },
     budget:{
-        type:[],
+        type:String,
         required:true
     },
     demand:{
-        type:[],
+        type:String,
         required:true
     }
 });
