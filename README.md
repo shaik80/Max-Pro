@@ -6,3 +6,8 @@ Jashwanthi V
 
 Shaik Mudassir
 
+## Technology used
+HTML, CSS, JavaScript, Node js,Mongoose,Express
+
+## Guidelines
+
