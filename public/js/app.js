@@ -1,10 +1,10 @@
 
 $(function(){
-    demand()
+    prefershop()
     
 })
 // start getting questions
-function demand(){
+function prefershop(){
     $.getJSON('http://localhost:3000/demands',function(json){
         demands = json;
         let sortdemandprofit = []
@@ -50,35 +50,9 @@ function demand(){
                 }
         })
         })
-        // let prodname = sortdemandprofit.map((v) => v.Productname) 
-        // let uniquecompanyname = new Set([...prodname])
-        // uniquecompanyname.forEach((v) => {
-        //     console.log(v)
-        //             })
-
-
-        // let prodname = sortdemandprofit.map((v,k) => {
-        //     v.productname,k
-        // })
 
 
 
-
-        // let sorted = sortdemandprofit.reduce((unique,item) => {
-        //     // console.log(item,unique,unique.includes(item),
-        //     // unique.includes(item) ? unique : [...unique,item])
-        //     return unique.includes(item) ? unique : [...unique,item]
-        // })
-
-
-        // let uniquecompanyname = new Set([...sortdemandprofit])
-        // uniquecompanyname.forEach((v,k) => {
-        //                 sortall.push(v.productname)
-        //             })
- 
-        // let unsorted = new Set(sortdemandprofit);
-        // let sorted = [...unsorted]
-        // console.log(uniquecompanyname)
         console.log(wholesalesdata)
         console.log(sortdemandprofit)
 
