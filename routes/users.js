@@ -125,7 +125,7 @@ router.post('/dashboard',(req,res)=>{
      
      res.redirect('/users/dashboard');
 
- Profit.findOne({items:profit.items})
+ Profit.findOne({price:profit.price})
  .then(profit=>{
     let profitPath = [];
     let itemSelection = [];
