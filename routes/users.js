@@ -106,5 +106,84 @@ router.get('/logout',(req,res)=>{
     
 })
 
+//dashboard
+router.post('/dashboard',(req,res)=>{
+    const{items,profit,mybudget,mydemand,price}=req.body;
+    let arr = items.split(",");
+    let arr1=profit.split(",");
+    let arr2=mydemand.split(",");
+    let arr3=price.split(",");
+    const newProfit= new Profit({
+     items:arr,
+     profit:arr1,
+     mybudget,
+     mydemand:arr2,
+     price:arr3
+ });
+ newProfit.save()
+ .then(profit=>{
+     
+     res.redirect('/users/dashboard');
+ 
+ 
+
+ Profit.findOne({items:profit.items})
+ .then(profit=>{
+    let profitPath = [];
+    let itemSelection = [];
+    let quantitySelection = [];
+    let answer = [];
+    
+    
+    function maxprofit(profit,mybudget,mydemand){
+        const items=profit.items;
+        const prof=profit.profit;
+        const price=profit.price;
+        let x=mydemand.reduce((a,b)=>a+b);
+        if(x>0){
+            let quantityArray=[];
+            let budgetArray=[];
+            let profitArray = [];
+            for(let i=0;i<items.length;i++){
+                quantityArray.push(Math.floor(mybudget/price[i]));
+                    if(quantityArray[i]>mydemand[i]){
+                        quantityArray[i]=mydemand[i]
+                    }
+                budgetArray.push(Math.floor(mybudget-(quantityArray[i]*price[i])));
+                profitArray.push(quantityArray[i]*prof[i]);
+            }
+            let maximumProfit = Math.max(...profitArray);
+            let profitIndex = profitArray.indexOf(maximumProfit);
+            profitPath.push(profitIndex);
+            let newBudget=budgetArray[profitIndex];
+            quantitySelection.push(quantityArray[profitIndex]);
+            itemSelection.push(items[profitIndex])
+            quantityArray[profitIndex] = 0;
+            maxprofit(profit,newBudget,quantityArray);
+           
+        }
+        else{
+            for(let j=0;j<profitPath.length;j++){
+                answer.push(`${quantitySelection[j]} x ${itemSelection[j]}`)
+            }
+          
+            
+        }
+        return answer
+    } 
+    
+let ans=maxprofit(profit,profit.mybudget,profit.mydemand);
+console.log(ans);
+
+
+
+
+})
+.catch(err => console.log(err));
+
+ });
+ 
+});
+
 module.exports=router;
 
