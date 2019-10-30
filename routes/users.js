@@ -162,7 +162,7 @@ router.post('/dashboard',(req,res)=>{
         }
         else{
             for(let j=0;j<profitPath.length;j++){
-                answer.push(`${quantitySelection[j]} x ${itemSelection[j]}`)
+                answer.push(`number of ${itemSelection[j]} = ${quantitySelection[j]} `)
             }
           
             
