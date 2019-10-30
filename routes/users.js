@@ -1,16 +1,23 @@
 const express=require('express');
 const router =express.Router();
 const bcrypt=require('bcryptjs');
-
+const passport =require('passport');
 //User model
 const User =require('../models/User');
 
+//profit model
+const Profit =require('../models/Profit');
 
 //Login page
 router.get('/login',(req,res)=>res.render('login'));
 
 //Register page
 router.get('/register',(req,res)=>res.render('register'));
+
+//dashboard page
+router.get('/dashboard',(req,res)=>res.render('dashboard'));
+
+
 
 
 //Register Handle
@@ -20,7 +27,7 @@ router.post('/register',(req,res)=>{
 
     //check required fields
     if(!name || !email || !password || !password2){
-        errors.push({msg:'Passwords do not match'});
+        errors.push({msg:'Please fill in all fields'});
     }
 
     //check password length
@@ -35,14 +42,14 @@ router.post('/register',(req,res)=>{
         res.render('register',{
             errors,
             name,
-            email,
+            email, 
             password,
             password2
         });
     }
     else{
         // validation passed
-        User.find({email:email})
+        User.findOne({email:email})
         .then(user=>{
             if(user){
                 //user exists
@@ -71,7 +78,8 @@ router.post('/register',(req,res)=>{
             //save user
             newUser.save()
             .then(user=>{
-                res.redirect('/login');
+                req.flash('success_msg','You are now registered and can log in')
+                res.redirect('/users/login');
             })
             .catch(err=>console.log(err));
         }))
@@ -81,4 +89,99 @@ router.post('/register',(req,res)=>{
 
 }
 });   
+
+// login handle
+router.post('/login',(req,res,next)=>{
+passport.authenticate('local',{
+    successRedirect:'/users/dashboard',
+    failureRedirect:'/users/login',
+    failureFlash:true
+})(req,res,next);
+});
+
+//logout handle
+router.get('/logout',(req,res)=>{
+    req.logout();
+    res.redirect('/users/login');
+    
+})
+
+//dashboard
+router.post('/dashboard',(req,res)=>{
+    const{items,profit,mybudget,mydemand,price}=req.body;
+    let arr = items.split(",");
+    let arr1=profit.split(",");
+    let arr2=mydemand.split(",");
+    let arr3=price.split(",");
+    const newProfit= new Profit({
+     items:arr,
+     profit:arr1,
+     mybudget,
+     mydemand:arr2,
+     price:arr3
+ });
+ newProfit.save()
+ .then(profit=>{
+     
+     res.redirect('/users/dashboard');
+
+ Profit.findOne({items:profit.items})
+ .then(profit=>{
+    let profitPath = [];
+    let itemSelection = [];
+    let quantitySelection = [];
+    let answer = [];
+    
+    
+    function maxprofit(profit,mybudget,mydemand){
+        const items=profit.items;
+        const prof=profit.profit;
+        const price=profit.price;
+        let x=mydemand.reduce((a,b)=>a+b);
+        if(x>0){
+            let quantityArray=[];
+            let budgetArray=[];
+            let profitArray = [];
+            for(let i=0;i<items.length;i++){
+                quantityArray.push(Math.floor(mybudget/price[i]));
+                    if(quantityArray[i]>mydemand[i]){
+                        quantityArray[i]=mydemand[i]
+                    }
+                budgetArray.push(Math.floor(mybudget-(quantityArray[i]*price[i])));
+                profitArray.push(quantityArray[i]*prof[i]);
+            }
+            let maximumProfit = Math.max(...profitArray);
+            let profitIndex = profitArray.indexOf(maximumProfit);
+            profitPath.push(profitIndex);
+            let newBudget=budgetArray[profitIndex];
+            quantitySelection.push(quantityArray[profitIndex]);
+            itemSelection.push(items[profitIndex])
+            quantityArray[profitIndex] = 0;
+            maxprofit(profit,newBudget,quantityArray);
+           
+        }
+        else{
+            for(let j=0;j<profitPath.length;j++){
+                answer.push(`${quantitySelection[j]} x ${itemSelection[j]}`)
+            }
+          
+            
+        }
+        return answer
+    } 
+    
+let ans=maxprofit(profit,profit.mybudget,profit.mydemand);
+console.log(ans);
+
+
+
+
+})
+.catch(err => console.log(err));
+
+ });
+ 
+});
+
 module.exports=router;
+

@@ -1,3 +1,60 @@
 <h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= user.name %></p>
+<form action="/users/dashboard" method="POST">
+<div class="form-group">
+    <label for="items">Items</label>
+    <input
+      type="items"
+      id="items"
+      name="items"
+      class="form-control"
+      placeholder="Enter Item name"
+      value="<%= typeof items != 'undefined' ? items : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="profit">Profit</label>
+    <input
+      type="profit"
+      id="profit"
+      name="profit"
+      class="form-control"
+      placeholder="Enter Profit"
+      value="<%= typeof profit != 'undefined' ? profit : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="mybudget">Budget</label>
+    <input
+      type="mybudget"
+      id="mybudget"
+      name="mybudget"
+      class="form-control"
+      placeholder="Enter Budget"
+      value="<%= typeof mybudget != 'undefined' ? mybudget : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="mydemand">Demand</label>
+    <input
+      type="mydemand"
+      id="mydemand"
+      name="mydemand"
+      class="form-control"
+      placeholder="Enter number of items"
+      value="<%= typeof mydemand != 'undefined' ? mydemand : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="price"
+      id="price"
+      name="price"
+      class="form-control"
+      placeholder="Enter price"
+      value="<%= typeof price != 'undefined' ? price : '' %>"
+    />
+  </div>
+  <button type="submit" class="btn btn-secondary">Submit</button>
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
+</form>
