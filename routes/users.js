@@ -124,8 +124,6 @@ router.post('/dashboard',(req,res)=>{
  .then(profit=>{
      
      res.redirect('/users/dashboard');
- 
- 
 
  Profit.findOne({items:profit.items})
  .then(profit=>{
