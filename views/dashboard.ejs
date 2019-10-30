@@ -1,14 +1,14 @@
 <h1 class="mt-4">Dashboard</h1>
 <form action="/users/dashboard" method="POST">
 <div class="form-group">
-    <label for="itemname">Items</label>
+    <label for="items">Items</label>
     <input
-      type="itemname"
-      id="itemname"
-      name="itemname"
+      type="items"
+      id="items"
+      name="items"
       class="form-control"
       placeholder="Enter Item name"
-      value="<%= typeof itemname != 'undefined' ? itemname : '' %>"
+      value="<%= typeof items != 'undefined' ? items : '' %>"
     />
   </div>
   <div class="form-group">
@@ -23,25 +23,36 @@
     />
   </div>
   <div class="form-group">
-    <label for="budget">Budget</label>
+    <label for="mybudget">Budget</label>
     <input
-      type="budget"
-      id="budget"
-      name="budget"
+      type="mybudget"
+      id="mybudget"
+      name="mybudget"
       class="form-control"
       placeholder="Enter Budget"
-      value="<%= typeof budget != 'undefined' ? budget : '' %>"
+      value="<%= typeof mybudget != 'undefined' ? mybudget : '' %>"
     />
   </div>
   <div class="form-group">
-    <label for="demand">Demand</label>
+    <label for="mydemand">Demand</label>
     <input
-      type="demand"
-      id="demand"
-      name="demand"
+      type="mydemand"
+      id="mydemand"
+      name="mydemand"
       class="form-control"
       placeholder="Enter number of items"
-      value="<%= typeof demand != 'undefined' ? demand : '' %>"
+      value="<%= typeof mydemand != 'undefined' ? mydemand : '' %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="price"
+      id="price"
+      name="price"
+      class="form-control"
+      placeholder="Enter price"
+      value="<%= typeof price != 'undefined' ? price : '' %>"
     />
   </div>
   <button type="submit" class="btn btn-secondary">Submit</button>

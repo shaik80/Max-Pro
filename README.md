@@ -1,4 +1,6 @@
 # Max-Pro
+This is a MaxPro appication where retailer will get maximum profit according to his budget.
+
 ## Authors
 Jashwanthi V 
 

@@ -3,20 +3,24 @@ const mongoose =require('mongoose');
 
 const ProfitSchema=new mongoose.Schema({
 
-    itemname:{
-        type:String,
+    items:{
+        type:[String],
         required:true
     },
     profit:{
-        type:String,
+        type:[Number],
         required:true
     },
-    budget:{
-        type:String,
+    mybudget:{
+        type:Number,
         required:true
     },
-    demand:{
-        type:String,
+    mydemand:{
+        type:[Number],
+        required:true
+    },
+    price:{
+        type:[Number],
         required:true
     }
 });
