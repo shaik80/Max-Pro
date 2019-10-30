@@ -39,15 +39,15 @@ function demand(){
         .forEach((wholesalesvalue,wholesaleskeys) => {
             demanddata.forEach((demandsvalue,demandskeys) =>{
                 if(wholesalesvalue.productname === demandsvalue.demandproductname){
-                    if(sortdemandprofit[demandskeys][typeof(Productname)] === undefined ||sortdemandprofit[demandskeys].Productname !== wholesalesvalue.productname ){
-                    let a = JSON.parse('{"Productname":'+ "\""+wholesalesvalue.productname+ "\""+',"profit":'+ wholesalesvalue.onepackageprofit+',"Shop":'+ "\""+wholesalesvalue.Shopname+"\"" + ',"demand":' + demandsvalue.demandvalue +'}')
-                    sortdemandprofit.push(a)// console.log([...new Set(a)])
+                    if(sortdemandprofit[demandskeys] === undefined ||sortdemandprofit[demandskeys].Productname !== wholesalesvalue.productname && sortdemandprofit[demandskeys].profit > wholesalesvalue.productname )
+                    {
+                        let a = JSON.parse('{"Productname":'+ "\""+wholesalesvalue.productname+ "\""+',"profit":'+ wholesalesvalue.onepackageprofit+',"Shop":'+ "\""+wholesalesvalue.Shopname+"\"" + ',"demand":' + demandsvalue.demandvalue +'}')
+                        sortdemandprofit.push(a)// console.log([...new Set(a)])
+                    }
+                    else{
+                        console.log("error")
+                    }
                 }
-                
-                    console.log()
-                    console.log()
-                }
-
         })
         })
         // let prodname = sortdemandprofit.map((v) => v.Productname) 
