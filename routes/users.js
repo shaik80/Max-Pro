@@ -105,6 +105,99 @@ router.get('/logout',(req,res)=>{
     res.redirect('/users/login');
     
 })
+router.post('/dashboard',(req,res)=>{
+    const{items,profit,mybudget,mydemand,price}=req.body;
+    let arr = items.split(",");
+    let arr1=profit.split(",");
+    let arr2=mydemand.split(",");
+    let arr3=price.split(",");
+    const newProfit= new Profit({
+     items:arr,
+     profit:arr1,
+     mybudget,
+     mydemand:arr2,
+     price:arr3
+ });
+ newProfit.save()
+ .then(profit=>{
+     
+     res.redirect('/users/dashboard');
+ 
+ 
 
+ Profit.findOne({items:profit.items})
+ .then(profit=>{
+    let profitPath = [];
+    let itemSelection = [];
+    let quantitySelection = [];
+    let answer = [];
+    // let newbud =[];
+    
+    function maxprofit(profit,mybudget,mydemand){
+        // console.log(profit);
+        const items=profit.items;
+        // console.log(items)
+        const prof=profit.profit;
+        // console.log(prof)
+        // const mydemand=mydemand;
+        // console.log(mydemand)
+        const price=profit.price;
+        // let mybudget=mybudget;
+        console.log("here");
+        console.log(mydemand)
+        let x=mydemand.reduce((a,b)=>a+b);
+        if(x>0){
+            let quantityArray=[];
+            let budgetArray=[];
+            let profitArray = [];
+            for(let i=0;i<items.length;i++){
+                quantityArray.push(Math.floor(mybudget/price[i]));
+                    if(quantityArray[i]>mydemand[i]){
+                        quantityArray[i]=mydemand[i]
+                    }
+                budgetArray.push(Math.floor(mybudget-(quantityArray[i]*price[i])));
+                profitArray.push(quantityArray[i]*prof[i]);
+            }
+            // console.log(quantityArray);
+            // console.log(budgetArray);
+            // console.log(profitArray);
+            let maximumProfit = Math.max(...profitArray);
+            // console.log(maximumProfit)
+            let profitIndex = profitArray.indexOf(maximumProfit);
+            // console.log(profitIndex);
+            profitPath.push(profitIndex);
+            // console.log(profitPath)
+            let newBudget=budgetArray[profitIndex];
+            // console.log(newBudget)
+            quantitySelection.push(quantityArray[profitIndex]);
+            // console.log(quantitySelection);
+            itemSelection.push(items[profitIndex])
+            // console.log(itemSelection)
+            quantityArray[profitIndex] = 0;
+            maxprofit(profit,newBudget,quantityArray);
+           
+        }
+        else{
+            for(let j=0;j<profitPath.length;j++){
+                answer.push(`${quantitySelection[j]} x ${itemSelection[j]}`)
+                // console.log(answer);
+            }
+          
+            
+        }
+        // maxprofit(newbud,quantityArray);
+        return answer
+    } 
+    
+let ans=maxprofit(profit,profit.mybudget,profit.mydemand);
+console.log(ans);
+
+
+})
+.catch(err => console.log(err));
+
+ });
+ 
+});
 module.exports=router;
 
