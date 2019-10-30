@@ -10,7 +10,7 @@ Shaik Mudassir
 HTML, CSS, JavaScript, Node js,Mongoose,Express
 
 ## Guidelines
-1.Each retailer have to register and login to application.
+1.Each retailer have to register and login to application.    
 2.After logging in you will find the dashboard where you have to enter the previous month data.
 3.The dasboard contains itemname,profit,price,demand sections.
 4.The retailer have to enter data according to these sections.
