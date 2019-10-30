@@ -1,9 +1,9 @@
 const express=require('express');
 const router =express.Router();
 const bcrypt=require('bcryptjs');
-const passport =require('passport');
+const passport = mongoose.model('passport');
 //User model
-const User =require('../models/User');
+const User = mongoose.model('User');
 
 //profit model
 const Profit =require('../models/Profit');

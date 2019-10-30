@@ -9,3 +9,5 @@ mongoose.connect(
 
 require('../models/wholesale.models')
 require('../models/demand.models')
+require('../models/User.models')
+require('../models/Profit.models')
