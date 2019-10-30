@@ -1,4 +1,4 @@
-// require('./config/db');
+require('./config/db');
 const express = require('express');
 const app = express();
 const port = process.env.port || 3000;
@@ -10,7 +10,9 @@ const session = require('express-session');
 const bodyparser = require('body-parser');
 const passport = require('passport');
 const introductioncontrollers = require('./controllers/introductioncontrollers')
-
+const wholesalecontrollers = require('./controllers/wholesalecontrollers')
+const demandcontrollers = require('./controllers/demandcontrollers')
+const maxprofit = require('./controllers/promax')
 app.use(express.static('public'));
 
 app.use(bodyparser.urlencoded({
@@ -49,3 +51,6 @@ app.set('view engine','hbs')
 app.listen(port,() => console.log('server started on port 3000.....'))
 
 app.use('/',introductioncontrollers)
+app.use('/maxprofit',maxprofit)
+app.use('/',wholesalecontrollers)
+app.use('/',demandcontrollers)
