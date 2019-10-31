@@ -31,8 +31,7 @@ function prefershop(){
                 Shopname:v.ShopName,
                 onepackageprofit:(v.SellingPrice - v.CostPrice),
                 FixedQty:v.fixedQty,
-                TotalQty:(v.fixedQty*v.totalpackage),
-                totalpackageprofit:((v.SellingPrice - v.CostPrice)*(v.fixedQty*v.totalpackage))
+                Totalpackage: v.totalpackage,
             }
         })
         .sort((a,b) => b.onepackageprofit - a.onepackageprofit)
@@ -41,7 +40,15 @@ function prefershop(){
                 if(wholesalesvalue.productname === demandsvalue.demandproductname){
                     if(sortdemandprofit[demandskeys] === undefined ||sortdemandprofit[demandskeys].Productname !== wholesalesvalue.productname && sortdemandprofit[demandskeys].profit > wholesalesvalue.productname )
                     {
-                        let a = JSON.parse('{"Productname":'+ "\""+wholesalesvalue.productname+ "\""+',"profit":'+ wholesalesvalue.onepackageprofit+',"Shop":'+ "\""+wholesalesvalue.Shopname+"\"" + ',"demand":' + demandsvalue.demandvalue +'}')
+                        let a = JSON.parse(
+                                           '{"Productname":'+ "\""+wholesalesvalue.productname+ "\""+
+                                           ',"id":'+ "\""+wholesalesvalue.id+"\""+
+                                           ',"Onepackageprofit":'+ wholesalesvalue.onepackageprofit+
+                                           ',"Shop":'+ "\""+wholesalesvalue.Shopname+"\"" +
+                                           ',"FixedQty":' + wholesalesvalue.FixedQty +
+                                           ',"Totalpackages":' + wholesalesvalue.Totalpackage +
+                                           ',"Demand":' + demandsvalue.demandvalue +
+                                           '}')
                         sortdemandprofit.push(a)// console.log([...new Set(a)])
                     }
                     else{
@@ -50,16 +57,11 @@ function prefershop(){
                 }
         })
         })
-
-
-
         console.log(wholesalesdata)
-        console.log(sortdemandprofit)
-
+        // console.log(sortdemandprofit)
+        sortdemandprofit.forEach((v,k) =>{
+            console.log(v);
+        })
     })
 })
-
 }
-// v.productname === demanddata[demandkey].demandproductname ?
-// console.log(v.productname + " = " + demanddata[k].demandvalue )
-// : console.log("error")
