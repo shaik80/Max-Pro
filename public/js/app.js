@@ -60,21 +60,27 @@ function prefershop(){
         })
         })
         // console.log(wholesalesdata)
-        let highpakagearray = [] 
-        // console.log(sortdemandprofit)
-        sortdemandprofit.forEach((v,k) =>{
-            highpakagearray.push(v.Totalpackages)
-        })        
-        console.log(highpakagearray);
-        let highpakage = Math.max(highpakagearray)
-        console.log(highpakage);
+        // let highpakagearray = [] 
+        console.log(sortdemandprofit)
+        // sortdemandprofit.forEach((v,k) =>{
+        //     highpakagearray.push(v.Totalpackages)
+        // })        
+        // console.log(highpakagearray);
+        // let highpakage = Math.max(...highpakagearray)
+        // console.log(highpakage);
         // sortdemandprofit.forEach((v,k) =>{
         //     const price = 100000
             
             
-        //     for(i = 0 ;i <= highpakage; i++){
-        //         if(v.Costprice*i == price){
+        //     for(i = 1 ;i <= highpakage; i++){
+        //         let estimatedcost = Math.floor(v.Costprice*i)
+        //         if( estimatedcost <= price  ){
+        //             let possibleqty = i;
+        //             let cp = v.CostPrice
         //             console.log(v,i)
+        //             // for(j=1;j<=i;j++){
+                        
+        //             // }
         //         }
         // } 
         // })
