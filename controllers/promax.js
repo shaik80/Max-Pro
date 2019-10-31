@@ -21,6 +21,7 @@ router.get('/', async (res,req) =>{
             productname:v.ProductName, 
             Shopname:v.ShopName,
             onepackageprofit:(v.SellingPrice - v.CostPrice),
+            CostPrice:v.CostPrice,
             FixedQty:v.fixedQty,
             Totalpackage: v.totalpackage,
         }
@@ -36,6 +37,7 @@ router.get('/', async (res,req) =>{
                                        ',"id":'+ "\""+wholesalesvalue.id+"\""+
                                        ',"Onepackageprofit":'+ wholesalesvalue.onepackageprofit+
                                        ',"Shop":'+ "\""+wholesalesvalue.Shopname+"\"" +
+                                       ',"Costprice":' + wholesalesvalue.CostPrice +
                                        ',"FixedQty":' + wholesalesvalue.FixedQty +
                                        ',"Totalpackages":' + wholesalesvalue.Totalpackage +
                                        ',"Demand":' + demandsvalue.demandvalue +
@@ -55,6 +57,7 @@ router.get('/', async (res,req) =>{
     // })
 
 
+    
         req.render("./employee/maxprofit",{
             list:sortdemandprofit
         })
