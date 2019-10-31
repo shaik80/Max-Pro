@@ -56,11 +56,7 @@ router.get('/', async (res,req) =>{
 
 
     
-    if(!err){
-        res.render("employee/list",{
-            list:sortdemandprofit
-        })
-    }
+        res.render("employee/list")
 })
 
 module.exports = router;
