@@ -1,11 +1,18 @@
 const express = require('express');
-const expressLayouts=require('express-ejs-layouts');
+// const expressLayouts=require('express-ejs-layouts');
 const mongoose =require('mongoose');
 const flash=require('connect-flash');
 const session =require('express-session');
 const passport=require('passport');
-
+const exphbs = require('express-handlebars');
+const path = require('path');
+const cors = require('cors');
 const app= express();
+
+
+app.use(express.static('public'));
+
+app.use(cors());
 
 //passport config
 require('./config/passport')(passport);
@@ -19,8 +26,14 @@ mongoose.connect(db,{useNewUrlParser:true, useUnifiedTopology:true})
 
 
 //EJS
-app.use(expressLayouts);
-app.set('view engine','ejs');
+app.set('views',path.join(__dirname,'./views'))
+app.engine('hbs',exphbs({
+   extname:'hbs',
+   defaultLayout:'layout',
+   layoutsDir:__dirname+'/views/',
+   partialsDir: __dirname+'/views/partials'
+}));
+app.set('view engine','hbs');
 
 //Bodyparser
 app.use(express.urlencoded({extended:false}));

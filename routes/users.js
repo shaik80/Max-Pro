@@ -60,7 +60,6 @@ router.post('/register',(req,res)=>{
                     email,
                     password,
                     password2
-            
         });
 
     }else {
@@ -124,15 +123,14 @@ router.post('/dashboard',(req,res)=>{
  .then(profit=>{
      
      res.redirect('/users/dashboard');
-
- Profit.findOne({items:profit.items})
+   
+ Profit.findOne({_id:profit.id})
  .then(profit=>{
     let profitPath = [];
     let itemSelection = [];
     let quantitySelection = [];
     let answer = [];
-    
-    
+
     function maxprofit(profit,mybudget,mydemand){
         const items=profit.items;
         const prof=profit.profit;
@@ -146,7 +144,7 @@ router.post('/dashboard',(req,res)=>{
                 quantityArray.push(Math.floor(mybudget/price[i]));
                     if(quantityArray[i]>mydemand[i]){
                         quantityArray[i]=mydemand[i]
-                    }
+                    }  
                 budgetArray.push(Math.floor(mybudget-(quantityArray[i]*price[i])));
                 profitArray.push(quantityArray[i]*prof[i]);
             }
@@ -162,20 +160,14 @@ router.post('/dashboard',(req,res)=>{
         }
         else{
             for(let j=0;j<profitPath.length;j++){
-                answer.push(`${quantitySelection[j]} x ${itemSelection[j]}`)
-            }
-          
-            
+                answer.push(`number of ${itemSelection[j]} = ${quantitySelection[j]} `)
+            }          
         }
         return answer
     } 
     
 let ans=maxprofit(profit,profit.mybudget,profit.mydemand);
 console.log(ans);
-
-
-
-
 })
 .catch(err => console.log(err));
 
