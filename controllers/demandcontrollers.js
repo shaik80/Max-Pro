@@ -35,7 +35,7 @@ function InsertRecord(req,res){
 
 router.get('/demands', async (req,res)=>{
     try{
-        const demand = await Demand.find().sort({"demand" : -1}).limit(10);
+        const demand = await Demand.find().sort({"demand" : -1});
         res.send(demand)
     }
     catch(err){
