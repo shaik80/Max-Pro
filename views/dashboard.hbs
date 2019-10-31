@@ -8,7 +8,7 @@
       name="items"
       class="form-control"
       placeholder="Enter Item name"
-      value="<%= typeof items != 'undefined' ? items : '' %>"
+      value="{{items}}"
     />
   </div>
   <div class="form-group">
@@ -19,7 +19,7 @@
       name="profit"
       class="form-control"
       placeholder="Enter Profit"
-      value="<%= typeof profit != 'undefined' ? profit : '' %>"
+      value="{{profit}}"
     />
   </div>
   <div class="form-group">
@@ -30,7 +30,7 @@
       name="mybudget"
       class="form-control"
       placeholder="Enter Budget"
-      value="<%= typeof mybudget != 'undefined' ? mybudget : '' %>"
+      value="{{mybudget}}"
     />
   </div>
   <div class="form-group">
@@ -41,7 +41,7 @@
       name="mydemand"
       class="form-control"
       placeholder="Enter number of items"
-      value="<%= typeof mydemand != 'undefined' ? mydemand : '' %>"
+      value="{{mydemand}}"
     />
   </div>
   <div class="form-group">
@@ -52,7 +52,7 @@
       name="price"
       class="form-control"
       placeholder="Enter price"
-      value="<%= typeof price != 'undefined' ? price : '' %>"
+      value="{{price}}"
     />
   </div>
   <button type="submit" class="btn btn-secondary">Submit</button>
