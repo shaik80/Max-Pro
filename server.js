@@ -13,6 +13,8 @@ const introductioncontrollers = require('./controllers/introductioncontrollers')
 const wholesalecontrollers = require('./controllers/wholesalecontrollers')
 const demandcontrollers = require('./controllers/demandcontrollers')
 const maxprofit = require('./controllers/promax')
+
+
 app.use(express.static('public'));
 
 app.use(bodyparser.urlencoded({
@@ -40,7 +42,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(flash());
-
 app.use((req,res,next)=>{
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
