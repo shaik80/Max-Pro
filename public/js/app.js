@@ -60,9 +60,12 @@ function prefershop(){
         })
         })
         console.log(wholesalesdata)
+        let price = 100000
         // console.log(sortdemandprofit)
         sortdemandprofit.forEach((v,k) =>{
-            console.log(v);
+            if(price == v.Productname){
+                console.log(v,k)
+            }
         })
     })
 })
