@@ -55,3 +55,6 @@ app.use('/',introductioncontrollers)
 app.use('/maxprofit',maxprofit)
 app.use('/',wholesalecontrollers)
 app.use('/',demandcontrollers)
+
+app.use('/jas',require('./routes/index'));
+app.use('/jas/users',require('./routes/users'));
