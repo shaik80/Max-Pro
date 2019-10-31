@@ -30,6 +30,7 @@ function prefershop(){
                 productname:v.ProductName, 
                 Shopname:v.ShopName,
                 onepackageprofit:(v.SellingPrice - v.CostPrice),
+                CostPrice:v.CostPrice,
                 FixedQty:v.fixedQty,
                 Totalpackage: v.totalpackage,
             }
@@ -45,6 +46,7 @@ function prefershop(){
                                            ',"id":'+ "\""+wholesalesvalue.id+"\""+
                                            ',"Onepackageprofit":'+ wholesalesvalue.onepackageprofit+
                                            ',"Shop":'+ "\""+wholesalesvalue.Shopname+"\"" +
+                                           ',"Costprice":' + wholesalesvalue.CostPrice +
                                            ',"FixedQty":' + wholesalesvalue.FixedQty +
                                            ',"Totalpackages":' + wholesalesvalue.Totalpackage +
                                            ',"Demand":' + demandsvalue.demandvalue +
