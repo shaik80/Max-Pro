@@ -2,8 +2,9 @@ const express = require('express');
 let router = express();
 const mongoose = require('mongoose');
 const Demand = mongoose.model('Demand')
+const {ensureAuthenticated} = require('../helpers/auth');
 
-router.get('/demand', (req,res) =>{
+router.get('/demand',ensureAuthenticated, (req,res) =>{
     res.render("./demand/addoredit",{
             demand: req.body
         })
