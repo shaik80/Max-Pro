@@ -107,7 +107,7 @@ router.get('/logout',(req,res)=>{
 })
 
 //dashboard
-router.post('/dashboard',(req,res)=>{
+router.post('/maxprofit',(req,res)=>{
     const{items,profit,mybudget,mydemand,price}=req.body;
     let arr = items.split(",");
     let arr1=profit.split(",");
@@ -121,17 +121,12 @@ router.post('/dashboard',(req,res)=>{
      price:arr3
  });
  newProfit.save()
- .then(profit=>{
-     
-     res.redirect('/users/dashboard');
-   
  Profit.findOne({_id:profit.id})
  .then(profit=>{
     let profitPath = [];
     let itemSelection = [];
     let quantitySelection = [];
     let answer = [];
-
     function maxprofit(profit,mybudget,mydemand){
         const items=profit.items;
         const prof=profit.profit;
@@ -167,12 +162,15 @@ router.post('/dashboard',(req,res)=>{
         return answer
     } 
     
-let ans=maxprofit(profit,profit.mybudget,profit.mydemand);
+let ans=maxprofit(profit,profit.mybudget,profit.mydemand)
+.then(profit=>{
+     
+    res.redirect('/employee/maxprofit',
+    {answer:ans});
+}); 
 console.log(ans);
 })
 .catch(err => console.log(err));
-
- });
  
 });
 

@@ -57,5 +57,5 @@ app.use('/maxprofit',maxprofit)
 app.use('/',wholesalecontrollers)
 app.use('/',demandcontrollers)
 app.use('/404',errorcontroller)
-app.use('/jas',indexcontrollers);
+app.use('/',indexcontrollers);
 app.use('/jas/users',userscontrollers);
