@@ -52,10 +52,10 @@ app.use((req,res,next)=>{
 app.set('view engine','hbs')
 app.listen(port,() => console.log('server started on port 3000.....'))
 
-app.use('/',introductioncontrollers)
+app.use('/dashboard',introductioncontrollers)
 app.use('/maxprofit',maxprofit)
 app.use('/',wholesalecontrollers)
 app.use('/',demandcontrollers)
 app.use('/404',errorcontroller)
 app.use('/',indexcontrollers);
-app.use('/jas/users',userscontrollers);
+app.use('/users',userscontrollers);
