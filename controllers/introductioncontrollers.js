@@ -3,7 +3,7 @@ let router = express();
 const mongoose = require('mongoose');
 
 
-router.get('/', (res,req) =>{
+router.get('/', (res, req) => {
     req.render('./employee/index')
 })
 
