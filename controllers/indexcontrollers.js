@@ -22,12 +22,11 @@ router.get('/404', (req, res) => res.render('./general/404'));
 
 //Register Handle
 router.post('/register', (req, res) => {
-console.log(req.body)
-    // const name = fullname.req.body,
-    //       email = email.req.body,
-    //       password = password.req.body,
-    //       password2 = password2.req.body;
-    
+    console.log(req.body)
+    const name = name.req.body,
+        email = email.req.body,
+        password = password.req.body,
+        password2 = password2.req.body;
     let errors = [];
 
     //check required fields
