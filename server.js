@@ -15,7 +15,6 @@ const demandcontrollers = require('./controllers/demandcontrollers')
 const maxprofit = require('./controllers/promax')
 const indexcontrollers = require('./controllers/indexcontrollers')
 const userscontrollers = require('./controllers/userscontrollers')
-const errorcontroller = require('./controllers/404controller') 
 app.use(express.static('public'));
 
 app.use(bodyparser.urlencoded({
@@ -56,6 +55,5 @@ app.use('/dashboard',introductioncontrollers)
 app.use('/maxprofit',maxprofit)
 app.use('/',wholesalecontrollers)
 app.use('/',demandcontrollers)
-app.use('/404',errorcontroller)
 app.use('/',indexcontrollers);
 app.use('/users',userscontrollers);
