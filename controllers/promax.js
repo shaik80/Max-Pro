@@ -1,75 +1,19 @@
 const express = require('express');
 let router = express();
 const mongoose = require('mongoose');
-const Wholesale = mongoose.model('Wholesale')
-const Demand = mongoose.model('Demand')
-const Profit = mongoose.model('Profit');
-let profitPath = [];
-let itemSelection = [];
-let quantitySelection = [];
+
+const { ensureAuthenticated} = require('../helpers/auth');
+
+
+const Profit = mongoose.model('Profit'); //to store input in db
+let profitPath = []; // to store array possible ways of profit
+let itemSelection = []; // to store array of item to be selected
+let quantitySelection = []; // to store array of qty to be selected
 let answer = [];
 
-// router.get('/', async (res, req) => {
-//     const demands = await Demand.find().sort({
-//         "demand": -1
-//     });
-//     let sortdemandprofit = []
-//     const demanddata = demands.map((v, k) => {
-//         return {
-//             demandproductname: v.ProductName,
-//             demandvalue: v.demand
-//         }
-//     })
-//     const wholesales = await Wholesale.find();
-//     wholesales.map((v, k) => {
-//             return {
-//                 id: v._id,
-//                 productname: v.ProductName,
-//                 Shopname: v.ShopName,
-//                 onepackageprofit: (v.SellingPrice - v.CostPrice),
-//                 CostPrice: v.CostPrice,
-//                 FixedQty: v.fixedQty,
-//                 Totalpackage: v.totalpackage,
-//             }
-//         })
-//         .sort((a, b) => b.onepackageprofit - a.onepackageprofit)
-//         .forEach((wholesalesvalue, wholesaleskeys) => {
-//             demanddata.forEach((demandsvalue, demandskeys) => {
-//                 if (wholesalesvalue.productname === demandsvalue.demandproductname) {
-//                     if (sortdemandprofit[demandskeys] === undefined || sortdemandprofit[demandskeys].Productname !== wholesalesvalue.productname && sortdemandprofit[demandskeys].profit > wholesalesvalue.productname) {
-//                         let a = JSON.parse(
-//                             '{"Productname":' + "\"" + wholesalesvalue.productname + "\"" +
-//                             ',"id":' + "\"" + wholesalesvalue.id + "\"" +
-//                             ',"Onepackageprofit":' + wholesalesvalue.onepackageprofit +
-//                             ',"Shop":' + "\"" + wholesalesvalue.Shopname + "\"" +
-//                             ',"Costprice":' + wholesalesvalue.CostPrice +
-//                             ',"FixedQty":' + wholesalesvalue.FixedQty +
-//                             ',"Totalpackages":' + wholesalesvalue.Totalpackage +
-//                             ',"Demand":' + demandsvalue.demandvalue +
-//                             '}')
-//                         sortdemandprofit.push(a) // console.log([...new Set(a)])
-//                     } else {
-//                         console.log("error")
-//                     }
-//                 }
-//             })
-//         })
-//     // console.log(sortdemandprofit)
-//     // console.log(sortdemandprofit)
-//     // sortdemandprofit.forEach((v,k) =>{
-//     //     console.log(v);
-//     // })
+router.get('/', ensureAuthenticated, (req, res) => res.render('./employee/maxprofit'))
 
-
-
-//     req.render("./employee/maxprofit", {
-
-//     })
-
-// })
-
-router.post('/', (req, res) => {
-
+router.post('/',  (req, res) => {
     let arr = req.body.items.split(",");
     let arr1 = req.body.profit.split(",");
     let arr2 = req.body.mydemand.split(",");
@@ -82,15 +26,19 @@ router.post('/', (req, res) => {
         mydemand: arr2,
         price: arr3
     });
-    newProfit.save()
+    newProfit.save() // save list of items,profit,budget,demands and price
         .then(profit => {
             Profit.findOne({
                 _id: profit.id
-            })
-            answer = [];
+            }) // fetch from the stored list from database
+
+            //empty the if array is filled
+            answer = []; 
             profitPath = [];
             itemSelection = [];
             quantitySelection = [];
+
+            //pass list of demand proft
             let ans = maxprofit(profit, profit.mybudget, profit.mydemand)
 
             console.log("result", ans)
@@ -102,32 +50,40 @@ router.post('/', (req, res) => {
 });
 
 function maxprofit(profit, mybudget, mydemand) {
-
     const items = profit.items;
     const prof = profit.profit;
     const price = profit.price;
 
+    //reduce the demand
     let x = mydemand.reduce((a, b) => a + b);
     if (x > 0) {
         let quantityArray = [];
         let budgetArray = [];
         let profitArray = [];
         for (let i = 0; i < items.length; i++) {
+            
+            //to find possiblity of the qty
             quantityArray.push(Math.floor(mybudget / price[i]));
+
+            //if individual qty array is greater then individual demand
+            //and  the qty = demand 
             if (quantityArray[i] > mydemand[i]) {
                 quantityArray[i] = mydemand[i]
             }
+            //save this in budget Array by cal
+            // old budget - (quantity Array * price)
             budgetArray.push(Math.floor(mybudget - (quantityArray[i] * price[i])));
+            //save this in profit Array (quantityArray * profit)
             profitArray.push(quantityArray[i] * prof[i]);
         }
-        let maximumProfit = Math.max(...profitArray);
-        let profitIndex = profitArray.indexOf(maximumProfit);
-        profitPath.push(profitIndex);
-        let newBudget = budgetArray[profitIndex];
-        quantitySelection.push(quantityArray[profitIndex]);
-        itemSelection.push(items[profitIndex])
+        let maximumProfit = Math.max(...profitArray);//find max from profit array
+        let profitIndex = profitArray.indexOf(maximumProfit); // find index of max proift
+        profitPath.push(profitIndex);// save the possible ways of profit
+        let newBudget = budgetArray[profitIndex]; // get the possible ways of profit
+        quantitySelection.push(quantityArray[profitIndex]); // how many qty of items to buy
+        itemSelection.push(items[profitIndex])// which items to buy
         quantityArray[profitIndex] = 0;
-        maxprofit(profit, newBudget, quantityArray);
+        maxprofit(profit, newBudget, quantityArray); //loop the function
 
     } else {
 
