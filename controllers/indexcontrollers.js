@@ -11,7 +11,7 @@ const { ensureAuthenticated} = require('../helpers/auth');
 // welcome page
 router.get('/', (req, res) => res.render('welcome'))
 //Dashboard
-router.get('/dashboard',  ensureAuthenticated,(res, req) => req.render('./employee/index'))
+router.get('/dashboard', ensureAuthenticated,(res, req) => req.render('./employee/index'))
 
 
 router.get('/login', (req, res) => res.render('./general/login'));
@@ -84,7 +84,7 @@ router.post('/login',(req,res,next) => {
 
 
 //logout handle
-router.get('/logout', (req, res) => {
+router.get('/logout', ensureAuthenticated, (req, res) => {
     req.logout();
     res.redirect('/');
 })
