@@ -66,26 +66,31 @@
             </div>
 
             <div class="card-body">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <div class="table-responsive">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Product Name</th>
+                      <th>Name</th>
                       <th>Qty</th>
                     </tr>
                   </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Qty</th>
+                    </tr>
+                  </tfoot>
                   <tbody>
                     {{#each result}}
                     <tr>
-                      <td>{{this}}</td>
-                      <td>{{this}}</td>
-                      <td>
+                      <td>{{this.name}}</td>
+                      <td>{{this.qty}}</td>
                     </tr>
                     {{/each}}
                   </tbody>
-              </table>
+                </table>
+              </div>
             </div>
-          </div>
         </div>
 
       </div>
