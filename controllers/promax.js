@@ -132,7 +132,8 @@ function maxprofit(profit, mybudget, mydemand) {
     } else {
 
         for (let j = 0; j < profitPath.length; j++) {
-            answer.push(`number of ${itemSelection[j]} = ${quantitySelection[j]} `)
+            let value = `{"name" : "${itemSelection[j]}", "qty":"${quantitySelection[j]}"}`
+            answer.push(JSON.parse(value))
         }
     }
     return answer
