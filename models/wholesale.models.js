@@ -1,24 +1,24 @@
-const mongoose= require('mongoose');
+const mongoose = require('mongoose');
 
 let wholesaleSchema = new mongoose.Schema({
-    ProductName:{
-        type:String
+    ProductName: {
+        type: String
     },
-    ShopName:{
-        type:String
+    ShopName: {
+        type: String
     },
-    fixedQty:{
-        type:String
+    fixedQty: {
+        type: String
     },
-    totalpackage:{
-        type:String
+    totalpackage: {
+        type: String
     },
-    CostPrice:{
-        type:String
+    CostPrice: {
+        type: String
     },
-    SellingPrice:{
-        type:String
+    SellingPrice: {
+        type: String
     }
 });
 
-mongoose.model('Wholesale',wholesaleSchema)
+mongoose.model('Wholesale', wholesaleSchema)
