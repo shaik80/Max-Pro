@@ -1,7 +1,7 @@
 require('./config/db');
 const express = require('express');
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port || 5000;
 const path = require('path');
 const cors = require('cors');
 const exphbs = require('express-handlebars');
@@ -49,7 +49,7 @@ app.use((req,res,next)=>{
 })
 
 app.set('view engine','hbs')
-app.listen(port,() => console.log('server started on port 3000.....'))
+app.listen(port,() => console.log('server started on port 5000.....'))
 
 app.use('/maxprofit',maxprofit)
 app.use('/',wholesalecontrollers)
