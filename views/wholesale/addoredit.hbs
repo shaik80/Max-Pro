@@ -1,14 +1,14 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
-      {{>sidenavbar}}
-   
-  
-            <!-- Content Wrapper -->
+    {{>sidenavbar}}
+
+
+    <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
       {{>topnavbar}}
       <!-- Main Content -->
       <div id="content">
-                  <!-- Begin Page Content -->
+        <!-- Begin Page Content -->
         <div class="container-fluid">
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -16,77 +16,83 @@
           </div>
 
 
-          
-    <div class="card o-hidden border-0 shadow-lg my-5">
-      <div class="card-body p-0">
-        <!-- Nested Row within Card Body -->
-        <div class="row">
-          <div class="col-12">
-            <div class="p-5">
-              <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Add Product's</h1>
+
+          <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+              <!-- Nested Row within Card Body -->
+              <div class="row">
+                <div class="col-12">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h1 class="h4 text-gray-900 mb-4">Add Product's</h1>
+                    </div>
+                    <form class="user" action="/wholesale" method="post" autocomplete="off">
+                      <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input list="productname" type="text" class="form-control form-control-user"
+                            id="exampleInputproductname" placeholder="Product Name" name="ProductName">
+                          <datalist id="productname">
+                          </datalist>
+                        </div>
+                        <div class="col-sm-6">
+                          <input list="shopname" type="text" class="form-control form-control-user"
+                            id="exampleInputshopname" placeholder="Shop Name" name="ShopName">
+                          <datalist id="shopname">
+                            <option>Bata</option>
+                            <option>Mark Shoe Store</option>
+                            <option>Metro Shoes</option>
+                            <option>Liberty Exclusive Showroom</option>
+                            <option>Vans HSR Layout</option>
+                            <option>Blak</option>
+                            <option>Pentofle</option>
+                            <option>Stepz</option>
+                            <option>Feet Fashion</option>
+                            <option>Akshay Footwear</option>
+                            <option>Legend Footwear</option>
+                            <option>Adidas</option>
+                            <option>khadim's</option>
+                            <option>Hush Puppies</option>
+                            <option>New Royal Footwear</option>
+                            <option>Crocs</option>
+                            <option>Omega Shoes</option>
+                            <option>Sahara</option>
+                          </datalist>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input type="number" class="form-control form-control-user" id="exampleInputqty"
+                            placeholder="Enter Fixed Qty = 1 package" name="fixedQty">
+                        </div>
+                        <div class="col-sm-6 ">
+                          <input type="number" class="form-control form-control-user" id="exampleInputqty"
+                            placeholder="Total package" name="totalpackage">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-6  mb-3 mb-sm-0">
+                          <input type="number" class="form-control form-control-user" id="exampleInputcostprice"
+                            placeholder="Cost Price of 1 pakage" name="CostPrice">
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="number" class="form-control form-control-user" id="exampleInputsellingprice"
+                            placeholder="Selling Price of of 1 pakage" name="SellingPrice">
+                        </div>
+                      </div>
+                      <hr>
+                      <button type="submit" class="btn btn-primary btn-user btn-block">
+                        Enter
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <form class="user" action="/wholesale" method="post" autocomplete="off">
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input list="productname" type="text" class="form-control form-control-user" id="exampleInputproductname" placeholder="Product Name" name="ProductName">
-                    <datalist id="productname">
-                    </datalist>
-                  </div>
-                  <div class="col-sm-6">
-                    <input list="shopname" type="text" class="form-control form-control-user" id="exampleInputshopname" placeholder="Shop Name" name="ShopName">
-                    <datalist id="shopname">
-                      <option>Bata</option>
-                      <option>Mark Shoe Store</option>
-                      <option>Metro Shoes</option>
-                      <option>Liberty Exclusive Showroom</option>
-                      <option>Vans HSR Layout</option>
-                      <option>Blak</option>
-                      <option>Pentofle</option>
-                      <option>Stepz</option>
-                      <option>Feet Fashion</option>
-                      <option>Akshay Footwear</option>
-                      <option>Legend Footwear</option>
-                      <option>Adidas</option>
-                      <option>khadim's</option>
-                      <option>Hush Puppies</option>
-                      <option>New Royal Footwear</option>
-                      <option>Crocs</option>
-                      <option>Omega Shoes</option>
-                      <option>Sahara</option>
-                    </datalist>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="number" class="form-control form-control-user" id="exampleInputqty" placeholder="Enter Fixed Qty = 1 package" name="fixedQty">
-                  </div>
-                  <div class="col-sm-6 ">
-                    <input type="number" class="form-control form-control-user" id="exampleInputqty" placeholder="Total package" name="totalpackage">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-6  mb-3 mb-sm-0">
-                    <input type="number" class="form-control form-control-user" id="exampleInputcostprice" placeholder="Cost Price of 1 pakage" name="CostPrice">
-                  </div>
-                <div class="col-sm-6">
-                    <input type="number" class="form-control form-control-user" id="exampleInputsellingprice" placeholder="Selling Price of of 1 pakage" name="SellingPrice">
-                  </div>    
-                </div>
-                <hr>
-                <button type="submit"  class="btn btn-primary btn-user btn-block">
-                  Enter
-                </button>
-              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-</div>
-</div>
-    </div>
-    </div> 
+  </div>
   <div class="container">
 
 
