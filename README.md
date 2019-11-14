@@ -44,5 +44,5 @@ http://maxprov1.herokuapp.com/
 
 
 ## demo video
-[![Watch the video](https://youtu.be/eSi3MGR1d8c)
+https://youtu.be/eSi3MGR1d8c
            
