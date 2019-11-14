@@ -44,4 +44,4 @@ http://maxprov1.herokuapp.com/
 
 
 ## demo video
-[![Watch the video](images/home.png)](img/demo.mp4)
+[![Watch the video](img/demo.mp4)]
