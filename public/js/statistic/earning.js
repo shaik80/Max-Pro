@@ -27,7 +27,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   }
   return s.join(dec);
 }
-  $.getJSON('http://localhost:3000/demands',function(json){
+  $.getJSON('http://localhost:5000/demands',function(json){
       demands = json;
       const demandvalue = []
       const demandname = []
