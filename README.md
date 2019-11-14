@@ -27,23 +27,21 @@ HTML, CSS, JavaScript, Node js,Mongoose,Express
 ## Link
 http://maxprov1.herokuapp.com/
 
-
+## Home page
 ![home](images/home.png)
 
-
+## Login page
 ![login](images/login.png)
 
-
+## Register page
 ![register](images/register.png)
 
-
+## Dashboard
 ![dashboard](images/dashboard.png)
 
-
+## Result
 ![maxprofit](images/maxprofit.png)
 
 
-![result](images/result.png)
-
 ## demo video
-[![Watch the video](images/home.png)](./public/img/demo.mp4)
+[![Watch the video](images/home.png)](img/demo.mp4)
