@@ -28,7 +28,8 @@ HTML, CSS, JavaScript, Node js,Mongoose,Express
 http://maxprov1.herokuapp.com/
 
 
-![alt home](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/home.PNG)
+![home](images/home.PNG)
+![Weather](images/weather.PNG)
 
 
 ![alt login](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/login.PNG)
