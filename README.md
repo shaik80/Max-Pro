@@ -28,7 +28,7 @@ HTML, CSS, JavaScript, Node js,Mongoose,Express
 http://maxprov1.herokuapp.com/
 
 
-![home](images/home.PNG)
+![home](images/home.png)
 ![Weather](images/weather.PNG)
 
 
