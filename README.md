@@ -31,17 +31,17 @@ http://maxprov1.herokuapp.com/
 ![home](images/home.png)
 
 
-![login](images/login.PNG)
+![login](images/login.png)
 
 
-![register](images/register.PNG)
+![register](images/register.png)
 
 
-![dashboard](images/dashboard.PNG)
+![dashboard](images/dashboard.png)
 
 
-![maxprofit](images/maxprofit.PNG)
+![maxprofit](images/maxprofit.png)
 
 
-![result](images/result.PNG)
+![result](images/result.png)
 
