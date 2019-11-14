@@ -13,7 +13,6 @@ const wholesalecontrollers = require('./controllers/wholesalecontrollers')
 const demandcontrollers = require('./controllers/demandcontrollers')
 const maxprofit = require('./controllers/promax')
 const indexcontrollers = require('./controllers/indexcontrollers')
-const userscontrollers = require('./controllers/userscontrollers')
 app.use(express.static('public'));
 
 app.use(bodyparser.urlencoded({
@@ -55,4 +54,3 @@ app.use('/maxprofit',maxprofit)
 app.use('/',wholesalecontrollers)
 app.use('/',demandcontrollers)
 app.use('/',indexcontrollers);
-app.use('/users',userscontrollers);

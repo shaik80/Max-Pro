@@ -41,10 +41,15 @@ router.post('/',  (req, res) => {
             //pass list of demand proft
             let ans = maxprofit(profit, profit.mybudget, profit.mydemand)
             res.render('./employee/maxprofit', {
-                result: ans
+                result: ans,
+
             });
         })
-        .catch(err => console.log(err));
+        .catch(err => {        
+        req.flash('error_msg','incorrect data')
+        res.redirect('/maxprofit')
+    });
+
 });
 
 function maxprofit(profit, mybudget, mydemand) {
