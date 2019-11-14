@@ -27,7 +27,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   }
   return s.join(dec);
 }
-let url ='https://maxprov1.herokuapp.com/' || 5000
+let url ='https://maxprov1.herokuapp.com/demands' || "http://localhost:5000/demands"
   $.getJSON(url,function(json){
       demands = json;
       const demandvalue = []
@@ -37,7 +37,6 @@ let url ='https://maxprov1.herokuapp.com/' || 5000
           demandvalue.push(v.demand)
           demandname.push(v.ProductName)           
       });
-
 // Area Chart Example
 let ctx = document.getElementById("myAreaChart");
 let myLineChart = new Chart(ctx, {
