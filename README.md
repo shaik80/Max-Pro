@@ -29,20 +29,19 @@ http://maxprov1.herokuapp.com/
 
 
 ![home](images/home.png)
-![Weather](images/weather.PNG)
 
 
-![alt login](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/login.PNG)
+![login](images/login.PNG)
 
 
-![alt register](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/register.PNG)
+![register](images/register.PNG)
 
 
-![alt dashboard](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/dashboard.PNG)
+![dashboard](images/dashboard.PNG)
 
 
-![alt maxprofit](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/maxprofit.PNG)
+![maxprofit](images/maxprofit.PNG)
 
 
-![alt result](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/result.PNG)
+![result](images/result.PNG)
 
