@@ -43,5 +43,5 @@ http://maxprov1.herokuapp.com/
 ![maxprofit](images/maxprofit.png)
 
 
-![result](images/result.png)
+
 
