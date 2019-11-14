@@ -44,7 +44,8 @@ http://maxprov1.herokuapp.com/
 
 
 ## demo video
-              <video width="100%" controls>
-                <source src="./public/img/demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+           
+ <video width="100%" controls>
+   <source src="./public/img/demo.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+ </video>
