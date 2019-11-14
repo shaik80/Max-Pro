@@ -28,17 +28,20 @@ HTML, CSS, JavaScript, Node js,Mongoose,Express
 http://maxprov1.herokuapp.com/
 
 
-![alt login](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/img/login.PNG)
+![alt home](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/home.PNG)
 
 
-![alt register](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/img/register.PNG)
+![alt login](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/login.PNG)
 
 
-![alt Dashboard](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/img/dashboard.PNG)
+![alt register](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/register.PNG)
 
 
-![alt list](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/img/list.PNG)
+![alt dashboard](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/dashboard.PNG)
 
 
-![alt output](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/img/output.PNG)
+![alt maxprofit](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/maxprofit.PNG)
+
+
+![alt result](https://github.com/shaik80/Max-Pro/blob/Jashwanthi/images/result.PNG)
 
