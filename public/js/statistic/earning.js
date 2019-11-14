@@ -27,7 +27,8 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   }
   return s.join(dec);
 }
-  $.getJSON('http://localhost:5000/demands',function(json){
+let url ='https://maxproapp.herokuapp.com/demands' || 5000
+  $.getJSON(url,function(json){
       demands = json;
       const demandvalue = []
       const demandname = []
