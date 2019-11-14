@@ -20,7 +20,7 @@ HTML, CSS, JavaScript, Node js,Mongoose,Express
 
 5.Retailer have to enter data one by one separated by comma's.
 
-6.Ater entering all the data you need to submit the data.
+6.After entering all the data you need to submit the data.
 
 7.Then,you will get the list of items and quantity which you need to buy.
 
