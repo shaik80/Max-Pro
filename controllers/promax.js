@@ -40,8 +40,6 @@ router.post('/',  (req, res) => {
 
             //pass list of demand proft
             let ans = maxprofit(profit, profit.mybudget, profit.mydemand)
-
-            console.log("result", ans)
             res.render('./employee/maxprofit', {
                 result: ans
             });
