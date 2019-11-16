@@ -45,12 +45,12 @@ app.use((req,res,next)=>{
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
     next();
-})
+});
 
-app.set('view engine','hbs')
-app.listen(port,() => console.log('server started on port 5000.....'))
+app.set('view engine','hbs');
+app.listen(port,() => console.log('server started on port 5000.....'));
 
-app.use('/maxprofit',maxprofit)
-app.use('/',wholesalecontrollers)
-app.use('/',demandcontrollers)
+app.use('/maxprofit',maxprofit);
+app.use('/',wholesalecontrollers);
+app.use('/',demandcontrollers);
 app.use('/',indexcontrollers);
