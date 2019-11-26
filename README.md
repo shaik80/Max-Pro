@@ -1,10 +1,9 @@
 # Max-Pro
+                                         Shaik Mudassir | Jashwanthi V
 This is a MaxPro appication where retailer will get a shopping list to get maximum profit according to his budget.
 
-## Authors
-Jashwanthi V 
-
-Shaik Mudassir
+**note**
+`This application works only when there is high demad and less budget
 
 ## Technology used
 HTML, CSS, JavaScript, Node js,Mongoose,Express
