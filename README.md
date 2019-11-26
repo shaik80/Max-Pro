@@ -28,10 +28,7 @@ HTML, CSS, JavaScript, Node js,Mongoose,Express
 http://maxprov1.herokuapp.com/
 
 ## Home page
-![home](images/home.png)![login](images/login.png)
-
-
-
+![home](images/home.png)
 
 ## Login page
 ![login](images/login.png)
@@ -42,9 +39,10 @@ http://maxprov1.herokuapp.com/
 ## Dashboard
 ![dashboard](images/dashboard.png)
 
+## inout
+![maxprofit](images/input.png)
+
 ## Result
 ![maxprofit](images/maxprofit.png)
-
-
 ## demo video
 [click here](https://youtu.be/eSi3MGR1d8c)
