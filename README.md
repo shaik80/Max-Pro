@@ -42,7 +42,5 @@ http://maxprov1.herokuapp.com/
 ## inout
 ![maxprofit](images/input.png)
 
-## Result
-![maxprofit](images/maxprofit.png)
 ## demo video
 [click here](https://youtu.be/eSi3MGR1d8c)
