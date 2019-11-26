@@ -39,8 +39,8 @@ http://maxprov1.herokuapp.com/
 ## Dashboard
 ![dashboard](images/dashboard.png)
 
-## inout
-![maxprofit](images/input.png)
+## result
+![maxprofit](images/maxprofit.png)
 
 ## demo video
 [click here](https://youtu.be/eSi3MGR1d8c)
