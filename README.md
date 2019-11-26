@@ -11,7 +11,8 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 + JavaScript
 + MVC Handlebars
 + Node js
-+ Mongoose
++ Mongodb 
++ Mongoose 
 + Express
 
 ## Guidelines
