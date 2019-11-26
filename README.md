@@ -16,22 +16,24 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 + Express
 
 ## Guidelines
-1.Each retailer have to register and login to application.   
 
-2.After logging in you will find the dashboard where you have to enter the previous month data.
+1. Each retailer have to register and login to application.
 
-3.The dasboard contains itemname,profit,price,demand sections.
+2. After logging in you will find the dashboard. 
+   There we have genrated api of product demand fetching from Databasr.
 
-4.The retailer have to enter data according to these sections.
+3. goto maxpro section there You enter itemname,profit,price,demand sections.
 
-5.Retailer have to enter data one by one separated by comma's.
+4. The retailer have to enter data according to these sections.
 
-6.After entering all the data you need to submit the data.
+5. Retailer have to enter data one by one separated by comma's.
 
-7.Then,you will get the list of items and quantity which you need to buy.
+6. After entering all the data you need to submit the data.
 
-## Link
-http://maxprov1.herokuapp.com/
+7. Then,you will get the list of items and quantity which you need to buy.
+
+![click here for live demo](http://maxprov1.herokuapp.com/)
+
 
 ## Home page
 ![home](images/home.png)
