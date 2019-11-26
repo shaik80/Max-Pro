@@ -5,7 +5,14 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 **`Note : This application works only when there is high demad and less budget`**
 
 ## Technology used
-HTML, CSS, JavaScript, Node js,Mongoose,Express
++ HTML5
++ CSS
++ Bootsrap
++ JavaScript
++ MVC Handlebars
++ Node js
++ Mongoose
++ Express
 
 ## Guidelines
 1.Each retailer have to register and login to application.   
