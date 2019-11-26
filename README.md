@@ -14,7 +14,7 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 + Mongodb 
 + Mongoose 
 + Express
-
++ Figma for design
 ## Guidelines
 
 1. Each retailer have to register and login to application.
