@@ -32,7 +32,6 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 
 7. Then,you will get the list of items and quantity which you need to buy.
 
-[click here for live demo](http://maxprov1.herokuapp.com/)
 
 
 ## Home page
@@ -50,5 +49,9 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 ## result
 ![maxprofit](images/maxprofit.png)
 
-## demo video
-[click here](https://youtu.be/eSi3MGR1d8c)
+
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
+**live demo** [click here](http://maxprov1.herokuapp.com/)
+**video** [click here](https://youtu.be/eSi3MGR1d8c)
