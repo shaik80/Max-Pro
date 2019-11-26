@@ -50,8 +50,9 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 ![maxprofit](images/maxprofit.png)
 
 
-| Computer  | $1600 |
-| Phone     |   $12 |
-| Pipe      |    $1 |
+| User name                | Password |
+| ------------------------ | --------:|
+| sh.mudassir98@gmail.com  | 123456   |
+
 **live demo** [click here](http://maxprov1.herokuapp.com/)
 **video** [click here](https://youtu.be/eSi3MGR1d8c)
