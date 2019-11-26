@@ -32,7 +32,7 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 
 7. Then,you will get the list of items and quantity which you need to buy.
 
-![click here for live demo](http://maxprov1.herokuapp.com/)
+[click here for live demo](http://maxprov1.herokuapp.com/)
 
 
 ## Home page
