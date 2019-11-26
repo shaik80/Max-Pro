@@ -56,3 +56,4 @@ This is a MaxPro appication where retailer will get a shopping list to get maxim
 
 
 | **live demo** [click here](http://maxprov1.herokuapp.com/) | **video** [click here](https://youtu.be/eSi3MGR1d8c) |
+|------------------------------------------------------------|------------------------------------------------------|
