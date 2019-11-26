@@ -28,16 +28,8 @@ HTML, CSS, JavaScript, Node js,Mongoose,Express
 http://maxprov1.herokuapp.com/
 
 ## Home page
-```flow
-st=>start: ![home](images/home.png)
-op=>operation: ![register](images/register.png)
-cond=>condition: Successful Yes or No?
-e=>end: To admin
+![home](images/home.png)![login](images/login.png)
 
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
 
 
 
